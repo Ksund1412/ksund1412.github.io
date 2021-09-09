@@ -1,154 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial;
-  padding: 10px;
-  background: #000000;
-  margin-top:-20px;
-}
-
-.wrap {
-    width: 640px;
-    height: 480px;
-    overflow: hidden;
-    margin: auto;
-}
-
-iframe {
-    width: 76.92% !important;
-    height: 76.92% !important;
-    -webkit-transform: scale(1.3);
-    transform: scale(1.3);
+#wrapper { width: 710px; height: 1420px; padding: 0; overflow: hidden; }
+#scaled-frame { width: 1000px; height: 2000px; border: 0px; }
+#scaled-frame {
+    zoom: 0.71;
+    -moz-transform: scale(0.71);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.71);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.71);
     -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
 }
 
-/* Header/Blog Title */
-.header {
-  padding: 30px;
-  text-align: center;
-  background: #000000;
-}
-
-.header h1 {
-  font-size: 50px;
-  top:-20px;
-}
-
-/* Style the top navigation bar */
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-/* Style the topnav links */
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Change color on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Create two unequal columns that floats next to each other */
-/* Left column */
-.leftcolumn {   
-  float: left;
-  width: 75%;
-}
-
-/* Right column */
-.rightcolumn {
-  float: left;
-  width: 25%;
-  background-color: #f1f1f1;
-  padding-left: 20px;
-}
-
-/* Fake image */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
-}
-
-/* Add a card effect for articles */
-.card {
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-  margin-top: 20px;
-}
-
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {   
-    width: 100%;
-    padding: 0;
-  }
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .topnav a {
-    float: none;
-    width: 100%;
-  }
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+ #scaled-frame  { zoom: 1;  }
 }
 </style>
 
-
-<script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-</script>
-
-
-
-
-</head>
-<body>
-
-<div class="header">
-  <img src="https://github.com/Ksund1412/ksund1412.github.io/blob/main/autostore.png?raw=true">
-    <p>Lean, Transperant and Bold</p>
-      <a class="weatherwidget-io" href="https://forecast7.com/en/59d9110d64/lysaker/" data-label_1="LYSAKER" data-label_2="WEATHER" data-icons="Climacons Animated" data-theme="original" >LYSAKER WEATHER</a>
-          <p>Lean, Transperant and Bold</p>
-</div>         
-
-<div class='wrap'>
-
-<iframe width="1050px" height="950px" src="https://mon.ruter.no/departures/59.503849-11.256353/N4Igrgzgpgwg9gGzAWwHYBkCGBPOYAuIAXAGaYLQA0IARnJgE4AmExA2qBPnAA4AKCTAGMoASRbsQAOQDKAJSIzu-QSKIBWAByb1ANhDVZCpbwHCoRACwBmAOyWD0+YuVm1AJksBOAIwgAutRMUILYUExKjPgAKgCWyFDEAAzUABaxTMEYsahQrESgRi6mqhaevpJFAIpgOFbW1uoAtJY+lk1ymADWXXn4mEwABFyYEABWcKiO1bXY9dbtre0AstjQqMP945PTzjV1No0tPs2dPX0Dm6MTU4Z7s-PNrbYd3b0jQyPbt04K+3OHJ66dxNVbrK7fXZ-B6Alq6FZrKAbL43KFEf6POHtACiGQgNCgDAA5oMwKgiUw4MgIBAuohEndoQcGotbC8wUjBgA3IkQAB0aIxsN0C1e5w+TQAEuQsoKYQ1miL2md3v1PltUYz0fLRUrQYjkRqdv4AL7UVAoAkMADyJAAIlAeFEwAw8sRdNR8LF8AhEkQQOg1t1CY4mLEIJgaL6mNEGJhUBAeHAGPhlnBgvk2LRIAFqEjI9HiPgGGAoGkMlBY8IuvAkGgiyWoGbOK5SuJM4EQMFQuFIim4glkuXMkj0Dk3QUzSALcgrbaHU6Uy6J5pPd7fcQQNFMFzfaT8JyvfgDwhQ+GC+Eqwmkym0xn2J381HwsQyBQyyB0sEq0Ia4gUFMpDkNAJqdlyhIQLEOxEO4JpAA"></iframe>
-
-</div>
-
- 
-
-</body>
-</html>
+<div id="wrapper"><iframe id="scaled-frame" src="https://mon.ruter.no/departures/59.503849-11.256353/N4Igrgzgpgwg9gGzAWwHYBkCGBPOYAuIAXAGaYLQA0IARnJgE4AmExA2qBPnAA4AKCTAGMoASRbsQAOQDKAJSIzu-QSKIBWAByb1ANhDVZCpbwHCoRACwBmAOyWD0+YuVm1AJksBOAIwgAutRMUILYUExKjPgAKgCWyFDEAAzUABaxTMEYsahQrESgRi6mqhaevpJFAIpgOFbW1uoAtJY+lk1ymADWXXn4mEwABFyYEABWcKiO1bXY9dbtre0AstjQqMP945PTzjV1No0tPs2dPX0Dm6MTU4Z7s-PNrbYd3b0jQyPbt04K+3OHJ66dxNVbrK7fXZ-B6Alq6FZrKAbL43KFEf6POHtACiGQgNCgDAA5oMwKgiUw4MgIBAuohEndoQcGotbC8wUjBgA3IkQAB0aIxsN0C1e5w+TQAEuQsoKYQ1miL2md3v1PltUYz0fLRUrQYjkRqdv4AL7UVAoAkMADyJAAIlAeFEwAw8sRdNR8LF8AhEkQQOg1t1CY4mLEIJgaL6mNEGJhUBAeHAGPhlnBgvk2LRIAFqEjI9HiPgGGAoGkMlBY8IuvAkGgiyWoGbOK5SuJM4EQMFQuFIim4glkuXMkj0Dk3QUzSALcgrbaHU6Uy6J5pPd7fcQQNFMFzfaT8JyvfgDwhQ+GC+Eqwmkym0xn2J381HwsQyBQyyB0sEq0Ia4gUFMpDkNAJqdlyhIQLEOxEO4JpAA"></iframe></div>
